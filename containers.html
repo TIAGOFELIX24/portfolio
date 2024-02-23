@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página Web</title>
+    <!-- Link para o Bootstrap via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header class="py-3">
+    <div class="container text-center">
+        <h1>Minha Página Web</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- Fim do cabeçalho -->
+
+<!-- Corpo da página -->
+<main>
+    <div class="container">
+        <!-- Seção 1 -->
+        <section class="mb-4">
+            <h2>Noite Estrelada: A Dança Cósmica da Solidão</h2>
+            <p>Vincent van Gogh, com sua intensa paixão pela arte e pela vida, criou obras que transbordam emoção e beleza. Em "Noite Estrelada", ele imortalizou a turbulência de sua mente em uma dança cósmica de cores e formas. As pinceladas frenéticas e os redemoinhos celestiais capturam a profunda solidão e a busca por significado que permeavam sua existência. Cada estrela parece um portal para um universo de reflexão interior, onde a mente do artista vagueia em busca de respostas para os mistérios da existência.</p>
+        </section>
+
+        <!-- Seção 2 -->
+        <section class="mb-4">
+            <h2>Girassóis: Flores da Esperança e da Vitalidade</h2>
+            <p>Em contraste, "Girassóis" irradia calor e vitalidade, celebrando a beleza simples e alegre da natureza. Van Gogh transforma essas flores comuns em símbolos de esperança e otimismo, usando cores vibrantes e pinceladas enérgicas para transmitir sua reverência pela vida. Os girassóis parecem seguir a luz do sol, uma metáfora poderosa para a busca da felicidade e da realização pessoal. É uma obra que nos lembra da capacidade transformadora da arte e da natureza para elevar nossos espíritos.</p>
+        </section>
+
+        <!-- Seção 3 -->
+        <section class="mb-4">
+            <h2>O Quarto em Arles: Reflexões de uma Mente Inquieta</h2>
+            <p>Por fim, em "O Quarto em Arles", van Gogh nos convida a adentrar em seu mundo interior através de uma representação simples, mas profundamente pessoal, de seu próprio espaço de vida. As linhas tortuosas e as cores contrastantes refletem sua agitação mental, enquanto os objetos domésticos ganham vida própria, revelando a solidão e a angústia do artista. É como se cada objeto contasse uma história silenciosa, permitindo-nos vislumbrar a mente complexa e inquieta por trás da obra.</p>
+        </section>
+    </div>
+</main>
+<!-- Fim do corpo da página -->
+
+<!-- Rodapé -->
+<footer>
+    <div class="container">
+        <p>&copy; <span id="year"></span> Minha Página Web</p>
+    </div>
+</footer>
+<!-- Fim do rodapé -->
+
+<!-- Script para inserir o ano atual no rodapé -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

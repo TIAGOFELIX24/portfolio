@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prática: Como usamos exceções?</title>
+<script>
+    function exibirErro(mensagem) {
+        document.getElementById('resultado').innerHTML = '<p style="color: red;">Erro: ' + mensagem + '</p>';
+    }
+
+    class Funcionario {
+        constructor(nome, idade, cargo) {
+            this.nome = nome;
+            this.idade = idade;
+            this.cargo = cargo;
+        }
+
+        seApresentar() {
+            return `Olá, meu nome é ${this.nome} e sou ${this.cargo}.`;
+        }
+
+        trabalhar() {
+            return `${this.nome} está realizando suas tarefas.`;
+        }
+    }
+
+    class Gerente extends Funcionario {
+        constructor(nome, idade, cargo, departamento) {
+            super(nome, idade, cargo);
+            this.departamento = departamento;
+        }
+
+        gerenciar() {
+            return `${this.nome} está gerenciando o departamento ${this.departamento}.`;
+        }
+    }
+
+    class Desenvolvedor extends Funcionario {
+        constructor(nome, idade, cargo, linguagem) {
+            super(nome, idade, cargo);
+            this.linguagem = linguagem;
+        }
+
+        programar() {
+            return `${this.nome} está programando em ${this.linguagem}.`;
+        }
+    }
+
+    function criarFuncionarios() {
+        try {
+            const nome = document.getElementById('nome').value;
+            const idade = parseInt(document.getElementById('idade').value);
+            const cargo = document.getElementById('cargo').value;
+            const departamento = document.getElementById('departamento').value;
+            const linguagem = document.getElementById('linguagem').value;
+
+            if (!nome || !idade || !cargo || !departamento || !linguagem) {
+                throw "Todos os campos devem ser preenchidos.";
+            }
+
+            const gerente = new Gerente(nome, idade, cargo, departamento);
+            const desenvolvedor = new Desenvolvedor(nome, idade, cargo, linguagem);
+
+            document.getElementById('resultado').innerHTML = `
+                <p>${gerente.seApresentar()}</p>
+                <p>${gerente.trabalhar()}</p>
+                <p>${gerente.gerenciar()}</p>
+                <p>${desenvolvedor.seApresentar()}</p>
+                <p>${desenvolvedor.trabalhar()}</p>
+                <p>${desenvolvedor.programar()}</p>
+            `;
+        } catch (error) {
+            exibirErro(error);
+        }
+    }
+</script>
+</head>
+<body>
+<h1>Título da Prática: Como usamos exceções?</h1>
+<h2>Objetivos:</h2>
+<p>Implementar uso de exceções.</p>
+<h2>Materiais, Métodos e Ferramentas:</h2>
+<p>Para realizar esta prática vamos utilizar o Visual Studio Code.</p>
+<h2>Prática:</h2>
+<p>Você está trabalhando no desenvolvimento de um sistema para uma empresa que gerencia funcionários. Sua tarefa é implementar o código em JavaScript que modele essa situação, utilizando classes, herança, exceções e elementos do DOM.</p>
+<form onsubmit="criarFuncionarios(); return false;">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br>
+    <label for="idade">Idade:</label><br>
+    <input type="text" id="idade" name="idade"><br>
+    <label for="cargo">Cargo:</label><br>
+    <input type="text" id="cargo" name="cargo"><br>
+    <label for="departamento">Departamento:</label><br>
+    <input type="text" id="departamento" name="departamento"><br>
+    <label for="linguagem">Linguagem de Programação:</label><br>
+    <input type="text" id="linguagem" name="linguagem"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<div id="resultado"></div>
+</body>
+</html>
+
